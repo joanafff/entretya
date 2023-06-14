@@ -1,0 +1,457 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap');
+
+/* -----BLOQUES ------*/
+body{
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* ------------------------- HEADER -------------------------------*/
+
+/* ----- Logo e Iconos ------*/
+header{
+  width: 100%; 
+  background-color: #ece1ec;
+}
+
+.cabecera {
+    display: block;
+    background-size: cover;
+}
+
+.cabecera .sesion-false, .cabecera .sesion-true {
+  padding: 30px 60px 0px 60px;
+  display: flex;
+  justify-content: space-between; /*hace que qede cada uno en un extremo y el otro en medio*/
+}
+
+.cabecera a img , .cabecera button{
+  border-radius: 5px; /*redondea el borde*/
+  border: 1px solid black; 
+  background-color: white;
+}
+
+.logo{
+  text-align: center;
+  margin-top: -60px;
+}
+
+/* -----Barra de navegación ------*/
+
+nav {
+  background: linear-gradient(rgba(146, 146, 146, 0.719),rgba(146, 146, 146, 0.719)), url(../img/nav.png);
+  color:#ffffff;
+  letter-spacing: 1px;
+  padding: 1px;
+  background-size: cover;}
+
+nav img{
+  position: absolute;
+}
+
+.menu{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+  padding: inherit;
+}
+.menu> li > a{
+	display: block;
+	padding: 5px 40px;
+	color: inherit;
+	text-decoration: none;
+}
+.menu> li a:hover{
+  color: rgba(107, 106, 106, 0.986);
+}
+
+.submenu{
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: auto;
+	background-color: rgb(169 169 169 / 86%);
+  padding: 10px;
+  z-index:2;
+}
+.menu li:hover .submenu{
+	display: block;
+}
+
+.submenu li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .cabecera .sesion-false, .cabecera .sesion-true {margin-bottom: 30px;}
+  nav {letter-spacing: 0px; font-size: 16px;}
+  .menu > li > a {padding: 5px 12px;}
+}
+
+/* ------------------------- FOOTER -------------------------------*/
+
+footer{
+  color: white;
+  background: linear-gradient(rgba(146, 146, 146, 0.9),rgba(146, 146, 146, 0.9)), url(../img/footer.png);
+  background-size: auto, auto;
+  background-size: cover;
+}
+
+footer .enlaces{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  padding: 20px;
+}
+
+footer a{
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a:hover{
+  color: rgba(107, 106, 106, 0.986);
+}
+
+footer small{
+  justify-content: center;
+  display: flex;
+  padding-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+  footer .enlaces{ gap: 50px;}
+}
+
+@media (max-width: 500px) and (min-width: 300px) {
+  footer .enlaces{
+    display: grid;
+    gap: 10px;
+    text-align: center;
+  }
+  footer small{ padding-top: 10px; border-top: 0.5px solid white;}
+}
+
+/* ------------------------- PÁGINA INICIO -------------------------------*/
+#inicio{
+  margin-top: 140px;
+  font-family: 'Playfair Display', serif;
+}
+
+#inicio .contenedor{
+  position: relative;
+  text-align: center;
+  height: 180px;
+  margin-bottom: 150px;
+}
+
+#inicio .cont-trasero{
+  padding: 10px 20px;
+  display: flex;
+  background-color:hsl(312.63deg 13.22% 70.66%);
+  height: 150px;
+}
+
+#inicio .cont-contenido{
+  display: grid;
+  align-items: center;
+  position: relative;
+  top: -235px;
+  padding: 0 10%;
+  gap: 50px;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+#inicio .cont-imagen{
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#inicio .cont-texto{
+  color: white;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+  #inicio .cont-imagen{ height: 200px;}
+  #inicio .cont-contenido{ top: -185px;}
+  #inicio .cont-texto{font-size: 18px;}
+}
+
+@media (max-width: 700px){
+  #inicio{ margin-top: 40px;}
+  #inicio .contenedor{margin-bottom: 250px;}
+  #inicio .cont-trasero{ height: 350px; margin: 0 30px; border-radius: 20px;}
+  #inicio .cont-imagen{ 
+    width: 70%; 
+    height: 180px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 90px;
+    border-radius: 200px;
+  }
+  #inicio .cont-contenido{ display: block; top: -320px;}
+  #inicio .cont-texto{font-size: 16px;}
+}
+
+
+/* ------------------------- PÁGINA CONTACTO -------------------------------*/
+
+#contactar{ 
+  padding: 80px 150px;
+}
+
+#contactar .texto-formulario{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  letter-spacing: 1px;
+}
+
+#contactar .texto{
+  line-height: 30px;
+}
+
+#contactar .texto .titulo{
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#contactar .texto .titulo img{
+  width: 60px;
+  margin: 10px;
+  height: 100%;
+}
+
+#contactar .img-lavanda{
+  margin-top: 11px;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+}
+
+#contactar form{
+  padding: 60px 50px;
+  background-color: hsl(312.63deg 13.22% 70.66%);
+  border-radius: 20px;
+  display: grid;  
+  color: white;
+  font-weight: bold;
+  height: auto;
+}
+
+#contactar input, #contactar textarea{
+  margin-bottom: 30px;
+  height: 30px;
+  border-radius: 3px;
+  padding-left: 15px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background-color: hsl(312.63deg 13.22% 70.66%);
+  border: none;
+  border-bottom: solid 1px white;
+  color: white;
+  outline: none;
+}
+
+#contactar textarea{
+  min-height: 150px;
+  border: solid 1px white;
+}
+
+#contactar input:hover, #contactar textarea:hover{
+  border: solid 2px white;
+}
+
+#contactar button{
+  width: 100px;
+  height: 40px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 30px ;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  border: solid 1px white;
+  color: white;
+  background-color: hsl(312.63deg 13.22% 70.66%);
+  box-shadow: 2px 2px white;
+}
+#contactar button:hover{
+  color: hsl(350, 3%, 62%);
+  background-color: white;
+  box-shadow: none;
+}
+
+#contactar .mensaje{
+  background: #8de794;
+  color: #18853c;
+  text-align: center;
+  padding: 10px;
+  width: 60%;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+@media (max-width: 1000px) {
+  #contactar{padding: 60px 30px}
+  #contactar .texto-formulario{display: inherit;}
+  #contactar .img-lavanda{display: none;}
+}
+
+/* ------------------------------ MI LISTA ------------------------------- */
+
+
+#milista .container {
+  margin: 80px auto;
+  background-color: rgb(223, 220, 220);
+  border-radius: 8px;
+  position: relative;
+  width: 70%;
+}
+
+#milista h1{
+  text-align: center;
+  padding: 50px 0 60px 0;
+}
+
+#milista table{
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+}
+
+#milista table tr{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+#milista table td{
+  border-collapse: collapse;
+  padding: 10px 40px;
+}
+
+#milista table td img{
+  width: 130px;
+}
+
+#milista table td h3{
+  margin-bottom: 8px;
+}
+
+#milista table td p{
+  margin-left: 8px;
+}
+
+#milista table td .precio{
+  color: rgb(151, 8, 8);
+  font-weight: bold;
+}
+
+#milista table .botones{
+  display: grid;
+  gap: 15px;
+  top: 28px;
+  position: relative;
+}
+
+#milista table td button,
+#milista table td a{
+  cursor: pointer;
+  outline: none;
+  box-shadow: 2px 2px rgba(117, 115, 115, 0.596);
+  color: white;
+  background: #333;
+  padding: 4px 10px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-decoration: none;
+  border-style: none;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#milista table td button:hover,
+#milista table td a:hover {
+  box-shadow: none;
+  color: black;
+  background: white;
+}
+
+#milista .contact{
+  display: flex;
+  padding: 100px 200px;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+#milista .contact a{
+  height: 20px;
+  padding: 6px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  background: rgb(165, 162, 162);
+}
+
+#milista .no-prod{
+  text-align: center;
+  margin: 10%;
+}
+
+#milista .no-prod h2, h4{
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+#milista .no-prod a{
+  height: 20px;
+  padding: 6px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  background: rgb(165, 162, 162);
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+
+@media (max-width: 1000px) {
+  #milista .container{ 
+    margin: 0 auto;
+    background-color: inherit;
+  }
+  #milista h1{ font-size: 25px;}
+  #milista table td{ padding: 10px 20px;}
+  #milista table h3{ font-size: 17px;}
+  #milista .contact{ padding:20px 40px}
+}
