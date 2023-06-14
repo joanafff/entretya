@@ -76,9 +76,13 @@ if (isset($_POST['registrar'])){
             </div>
 
         </main>
-
-        <!--Para acceder al área del administrador-->
-        <a class="link-admin" href="admin/login_admin.php">Administrar este sitio</a>
+        
+        <div class="links">
+            <a class="link-home" href="index.php">Volver</a>
+            <!--Para acceder al área del administrador-->
+            <a class="link-admin" href="admin/login_admin.php">Administrar este sitio</a>
+        </div>
+        
 
         <script src="assets/js/registrarse.js"></script>
 </body>

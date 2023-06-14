@@ -35,7 +35,7 @@ main{
     justify-content: center;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 128, 255, 0.5);
+    background-color: rgba(179, 147, 189, 0.5);
 }
 
 .caja_trasera div{
@@ -74,7 +74,7 @@ main{
 
 .caja_trasera button:hover{
     background: #fff;
-    color: #46A2FD;
+    color: rgb(179 147 189);
 }
 
 /*---------Formularios----------*/
@@ -104,7 +104,7 @@ main{
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    color: #46A2FD;
+    color: rgb(179 147 189);
 }
 
 .contenedor_login-registro form input{
@@ -123,7 +123,7 @@ main{
     border: none;
     border-radius: 8px;
     font-size: 14px;
-    background: #46A2FD;
+    background: rgb(179 147 189);
     font-weight: 600;
     cursor: pointer;
     color: white;
@@ -155,11 +155,18 @@ main{
     margin: 20px auto;
 }
 
-.link-admin{
-    padding-top:8%;
-    position: absolute;
-    right: 4%;
+.link-admin, .link-home{
     color: white;
+}
+
+.links {
+    padding: 80px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links :hover{
+    color: rgb(179 147 189);
 }
 
 /* ----------- Para que sea responsive ----------- */

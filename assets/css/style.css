@@ -25,11 +25,11 @@ header{
 .cabecera .sesion-false, .cabecera .sesion-true {
   padding: 30px 60px 0px 60px;
   display: flex;
-  justify-content: space-between; /*hace que qede cada uno en un extremo y el otro en medio*/
+  justify-content: space-between;
 }
 
 .cabecera a img , .cabecera button{
-  border-radius: 5px; /*redondea el borde*/
+  border-radius: 5px;
   border: 1px solid black; 
   background-color: white;
 }
