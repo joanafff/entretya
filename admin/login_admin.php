@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS propio -->
     <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="shortcut icon" href="../assets/img/marca-shortcut.png">
     <title>Administrador</title>
 </head>
 

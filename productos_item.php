@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/tienda.css">
     <!-- CSS : Header y Footer-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/marca-shortcut.png">
     <title><?= $producto['nombre']; ?></title>
 
 </head>

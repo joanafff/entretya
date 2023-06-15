@@ -35,7 +35,7 @@ function enviarCorreo($nombre, $correo, $asunto, $mensaje){
     
     $envio = mail($destinatario, $asunto, $cuerpo, $headers);
     if (!empty($envio)){
-        header("Location: ../contacto.php?exito");
+        echo "<script language='javascript'>window.location='../contacto.php?exito'; </script>";
     }
 }
 ?>

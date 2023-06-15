@@ -2,16 +2,14 @@
 
 require_once 'conexion.php';
 
-// Variables globales: Usuario y Password del Administrador
-define("US_ADMIN", "admin");
-define("PS_ADMIN", "entretya2023");
-
-//Al loguearse, se verifica el usuario y contraseña del Administrador. Si los datos son incorrectos, se muestra el mensaje de error, si son correctos se redirige al área del administrador
+//Al loguearse, se verifica el usuario y contraseña del Administrador
 function comprobarAdmin($usuario, $clave){
-    if($usuario==US_ADMIN && $clave==PS_ADMIN){
-        header("Location: ../admin/productos.php");
+    $admin="admin";
+    $pwd= "entretya2023";
+    if($usuario==$admin && $clave==$pwd){
+        echo "<script language='javascript'>window.location='../admin/productos.php'</script>";
     }else{
-        header("Location: ../admin/login_admin.php?error=Usuario o contraseña incorrectos. Por favor, verifique los datos introducidos ");
+        echo "<script language='javascript'>window.location='../admin/login_admin.php?error=Usuario o contraseña incorrectos. Por favor, verifique los datos introducidos'</script>";
     }
 }
 

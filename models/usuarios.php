@@ -17,7 +17,7 @@ function registrarUsuario($nombre, $usuario, $clave){
     $query= "INSERT INTO usuarios(nombre, usuario, clave) VALUES('$nombre', '$usuario', '$clave')";
 
     if(mysqli_num_rows($verificar_usuario) > 0){
-        header("Location: registrarse.php?error=Este usuario ya existe");     
+        echo '<script> window.location= "registrarse.php?error=Este usuario ya existe"; </script>';    
     }else{
         //Se almacena el nuevo usuario en la base de datos
         $resultado= mysqli_query($conexion, $query);
@@ -29,13 +29,12 @@ function registrarUsuario($nombre, $usuario, $clave){
 
             echo '<script> window.location= "index.php"; </script>';
         } else{
-            header("Location: registrarse.php?error=Inténtalo de nuevo");
+            echo '<script> window.location= "registrarse.php?error=Inténtalo de nuevo"; </script>';
         }
     }
 }
 
 //Se comprueba si existe un usuario en la tabla Usuarios con dicho usuario y contraseña, si es así, se crea la sesión y se redirige al inicio para nevegar en modo 'autenticado'
-//Actualmente el único usuario existente es us:joanafff / ps:112233
 function loginUsuario($usuario, $clave){
 
     session_start();
@@ -52,10 +51,10 @@ function loginUsuario($usuario, $clave){
         $_SESSION['id']= $fila['id'];
         cerrarConexion($conexion);
 
-        header("Location: index.php");
+        echo "<script language='javascript'>window.location='index.php'</script>";
 
     }else{
-        header("Location: registrarse.php?error= Este usuario no existe, por favor verifique los datos introducidos");
+        echo "<script language='javascript'>window.location='registrarse.php?error= Este usuario no existe, por favor verifique los datos introducidos'</script>";
     }
 }
 
@@ -64,7 +63,8 @@ function cerrarSesion(){
     session_start();
     session_unset();
     session_destroy();
-    header('location: index.php');
+    echo "<script language='javascript'>window.location='index.php'</script>";
+    
 }
 
 ?>

@@ -19,7 +19,7 @@ function eliminarProductoMilista($id_producto){
     $conexion = crearConexion();
     mysqli_query($conexion, "DELETE FROM milista WHERE id_producto= $id_producto and id_usuario = $id_usuario");
     cerrarConexion($conexion);
-    header ("Location: milista.php");
+    echo "<script language='javascript'>window.location='milista.php'; </script>";
 }
 
 //Si el usuario no ha añadido el producto anteriormente, se inserta el nuevo producto en la tabla milista

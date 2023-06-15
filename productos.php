@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- CSS propio -->
     <link rel="stylesheet" href="assets/css/tienda.css">
+    <link rel="shortcut icon" href="assets/img/marca-shortcut.png">
 </head>
 <body>
     
