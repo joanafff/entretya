@@ -1,17 +1,16 @@
-<!-- Controladores para llamar a funciones del modelo Usuarios -->
-<?php 
-require_once 'models/usuarios.php';
+<?php
+    require_once 'controller/common.php';
 
-if (isset($_POST['entrar'])){
-    loginUsuario($_POST['usuario'], $_POST['clave']);
-}
+    require_once 'models/usuarios.php';
 
-if (isset($_POST['registrar'])){ 
-    registrarUsuario($_POST['nombre'], $_POST['usuario'], $_POST['clave']);
-}
+    if (isset($_POST['entrar'])){
+        loginUsuario($_POST['usuario'], $_POST['clave']);
+    }
+
+    if (isset($_POST['registrar'])){ 
+        registrarUsuario($_POST['nombre'], $_POST['usuario'], $_POST['clave']);
+    }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +21,7 @@ if (isset($_POST['registrar'])){
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- CSS propio --> 
     <link rel="stylesheet" href="assets/css/registrarse.css">
-    <link rel="shortcut icon" href="assets/img/marca-shortcut.png">
+  	<link rel="shortcut icon" href="assets/img/marca-shortcut.png">
 
 </head>
 <body>
@@ -72,7 +71,7 @@ if (isset($_POST['registrar'])){
             <div class="caja_mensaje">
                         <?php if (isset($_GET['error'])) { 
                             $mensaje= $_GET['error'];?>
-     		                <p class="mensaje"><?php echo $mensaje; ?></h1>
+     		                <p class="mensaje"><?php echo $mensaje; ?></p>
                         <?php } ?>
             </div>
 
@@ -83,7 +82,6 @@ if (isset($_POST['registrar'])){
             <!--Para acceder al área del administrador-->
             <a class="link-admin" href="admin/login_admin.php">Administrar este sitio</a>
         </div>
-        
 
         <script src="assets/js/registrarse.js"></script>
 </body>

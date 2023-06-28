@@ -4,9 +4,6 @@ require_once 'conexion.php';
 
 //El nuevo usuario se guarda si no existe en la tabla Usuarios. 
 function registrarUsuario($nombre, $usuario, $clave){
-    
-    session_start();
-
     //Encriptamiento de contraseña
     $clave = hash('sha512', $clave);
 
@@ -17,7 +14,7 @@ function registrarUsuario($nombre, $usuario, $clave){
     $query= "INSERT INTO usuarios(nombre, usuario, clave) VALUES('$nombre', '$usuario', '$clave')";
 
     if(mysqli_num_rows($verificar_usuario) > 0){
-        echo '<script> window.location= "registrarse.php?error=Este usuario ya existe"; </script>';    
+        redirigir("registrarse.php?error=Este+usuario+ya+existe");    
     }else{
         //Se almacena el nuevo usuario en la base de datos
         $resultado= mysqli_query($conexion, $query);
@@ -27,18 +24,15 @@ function registrarUsuario($nombre, $usuario, $clave){
             $_SESSION['id'] = $id_usuario['id'];
             cerrarConexion($conexion);
 
-            echo '<script> window.location= "index.php"; </script>';
+            redirigir("index.php");
         } else{
-            echo '<script> window.location= "registrarse.php?error=Inténtalo de nuevo"; </script>';
+            redirigir("registrarse.php?error=Inténtalo+de+nuevo");
         }
     }
 }
 
 //Se comprueba si existe un usuario en la tabla Usuarios con dicho usuario y contraseña, si es así, se crea la sesión y se redirige al inicio para nevegar en modo 'autenticado'
 function loginUsuario($usuario, $clave){
-
-    session_start();
-
     //Encriptamiento de contraseña
     $clave = hash('sha512', $clave);
 
@@ -48,23 +42,14 @@ function loginUsuario($usuario, $clave){
     
     if(mysqli_num_rows($res) > 0){
         $fila= mysqli_fetch_assoc($res);
+        log_debug("id usuari: " . $fila['id']);
         $_SESSION['id']= $fila['id'];
         cerrarConexion($conexion);
 
-        echo "<script language='javascript'>window.location='index.php'</script>";
-
+        redirigir("index.php");
     }else{
-        echo "<script language='javascript'>window.location='registrarse.php?error= Este usuario no existe, por favor verifique los datos introducidos'</script>";
+        redirigir("registrarse.php?error=Este+usuario+no+existe,+por+favor+verifique+los+datos+introducidos");
     }
-}
-
-//Para cerrar la sesión activa, se destruye la variable de sesión y se vuelve al inicio 
-function cerrarSesion(){
-    session_start();
-    session_unset();
-    session_destroy();
-    echo "<script language='javascript'>window.location='index.php'</script>";
-    
 }
 
 ?>

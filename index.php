@@ -1,3 +1,6 @@
+<?php
+    require_once 'controller/common.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +14,7 @@
 </head>
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php require 'views/header.php'; ?>
 
     <main id="inicio">
 
@@ -47,7 +50,7 @@
 
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php require 'views/footer.php'; ?>
 
 </body>
 </html>

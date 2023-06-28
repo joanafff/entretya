@@ -1,7 +1,9 @@
 <?php
-    include 'models/milista.php';
-    include 'models/productos.php';
-    include 'models/categorias.php';
+    require_once 'controller/common.php';
+
+    require_once 'models/milista.php';
+    require_once 'models/productos.php';
+    require_once 'models/categorias.php';
 
     //Se asigna un valor a la variable $orden, dependiendo de la variable pasada por GET
     if(isset($_GET['orden'])){
@@ -30,8 +32,6 @@
         $productos = buscarProducto($nombre);
     } 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +48,7 @@
 <body>
     
     <?php 
-        include 'header.php'; 
+        require 'views/header.php'; 
 
         if(isset($_POST['me-gusta'])){
             anadirProductoMilista($_POST['id'], $user_id);
@@ -134,7 +134,7 @@
 
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php require 'views/footer.php'; ?>
 
 </body>
 </html>

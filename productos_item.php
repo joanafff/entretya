@@ -1,7 +1,8 @@
 <?php 
-    include 'header.php'; 
-    include 'models/milista.php';
-    include 'models/productos.php';
+    require_once 'controller/common.php';
+
+    require_once 'models/milista.php';
+    require_once 'models/productos.php';
 
     $id_producto = $_GET ['id'];
     $producto = obtenerItem($id_producto);
@@ -10,8 +11,6 @@
         anadirProductoMilista($id_producto, $user_id);
     }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">    
 <head>
@@ -28,6 +27,7 @@
 </head>
 <body>
 
+    <?php require 'views/header.php'; ?>
     <main id="item">
         <form action="" method="post" class="box">
         <input type="hidden" name="pid" value="">
@@ -68,7 +68,7 @@
        
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php require 'views/footer.php'; ?>
 
     <!--Script para controlar el visualizador de imágenes con el evento onclick-->
     <script>

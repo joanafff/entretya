@@ -17,8 +17,3 @@
 		mysqli_close($conexion);
 	}
 ?>
-
-
-
-
-

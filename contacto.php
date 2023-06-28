@@ -1,3 +1,6 @@
+<?php
+    require_once 'controller/common.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
 </head>
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php require 'views/header.php'; ?>
 
     <div id="contactar">
         <div class="texto-formulario">
@@ -51,7 +54,7 @@
         </div>
     </div>
 
-    <?php include 'footer.php'; ?>   
+    <?php require 'views/footer.php'; ?>   
 
 </body>
 </html>

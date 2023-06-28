@@ -1,3 +1,6 @@
+<?php
+    require_once 'controller/common.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +14,12 @@
 </head>
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php require 'views/header.php'; ?>
 
     <main id="milista">
 
     <?php 
-    include 'models/milista.php';
+    require_once 'models/milista.php';
     $productos = obtenerProductosMilista();
 
     //Si no hay productos en la lista, solo se muestra este <section>
@@ -73,7 +76,7 @@
     ?>
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php require 'views/footer.php'; ?>
 
 </body>
 </html>
